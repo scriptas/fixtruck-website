@@ -1,348 +1,381 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>FixTruck - Truck & Trailer Service</title>
-      <!-- For the HTML document itself - shorter cache time -->
-      <meta http-equiv="Cache-Control" content="max-age=300, private" />
-      <!-- Favicon - Multiple formats for better browser compatibility -->
-      <link rel="icon" type="image/x-icon" href="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" />
-      <link rel="icon" type="image/png" sizes="32x32" href="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" />
-      <link rel="icon" type="image/png" sizes="16x16" href="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" />
-      <link rel="shortcut icon" href="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" />
-    
-    <!-- Embedded CSS (formerly default.css) -->
-    <style>
-      :root {
-        /* Primary colors (70%) */
-        --color-vivid-orange: 254 87 41;
-        --color-charcoal-black: 39 36 37;
-        --color-cool-gray: 183 183 183;
-        --color-pure-white: 255 255 255;
-        /* Secondary colors (30%) */
-        --color-charcoal-gray: 96 96 96;
-        --color-soft-pearl: 232 229 230;
-        --color-deep-teal-blue: 23 69 94;
-        --color-warm-apricot: 255 199 125;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixTruck - Truck & Trailer Service</title>
+  <!-- For the HTML document itself - shorter cache time -->
+  <meta http-equiv="Cache-Control" content="max-age=300, private" />
+  <!-- Favicon - Multiple formats for better browser compatibility -->
+  <link rel="icon" type="image/x-icon"
+    href="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" />
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" />
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" />
+  <link rel="shortcut icon" href="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" />
+
+  <!-- Embedded CSS (formerly default.css) -->
+  <style>
+    :root {
+      /* Primary colors (70%) */
+      --color-vivid-orange: 254 87 41;
+      --color-charcoal-black: 39 36 37;
+      --color-cool-gray: 183 183 183;
+      --color-pure-white: 255 255 255;
+      /* Secondary colors (30%) */
+      --color-charcoal-gray: 96 96 96;
+      --color-soft-pearl: 232 229 230;
+      --color-deep-teal-blue: 23 69 94;
+      --color-warm-apricot: 255 199 125;
+    }
+
+    /* Proxima Nova Font Faces */
+    @font-face {
+      font-family: 'Proxima Nova';
+      src: url('./fonts/ProximaNova-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Proxima Nova';
+      src: url('./fonts/Proxima Nova Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Add other font weights as needed */
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
 
-      /* Proxima Nova Font Faces */
-      @font-face {
-        font-family: 'Proxima Nova';
-        src: url('./fonts/ProximaNova-Regular.otf') format('opentype');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      @font-face {
-        font-family: 'Proxima Nova';
-        src: url('./fonts/Proxima Nova Bold.otf') format('opentype');
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-      }
-      /* Add other font weights as needed */
+    }
 
-      /* Animation */
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(30px);}
-        to { opacity: 1; transform: translateY(0);}
-      }
-      .animate-fadeIn { animation: fadeIn 1s cubic-bezier(0.4,0,0.2,1) both;}
-      
-      /* Base styles */
-      body {
-        font-family: 'Proxima Nova', system-ui, sans-serif;
-        background: linear-gradient(to bottom right, rgb(var(--color-charcoal-black)), rgb(var(--color-cool-gray) / 0.9));
-        color: rgb(var(--color-pure-white));
-        min-height: 100vh;
-      }
-      .cursor-animate {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .cursor-animate::after {
-          content: '';
-          position: absolute;
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          background: rgba(var(--color-vivid-orange), 0.3);
-          transform: scale(0);
-          transition: transform 0.3s;
-          pointer-events: none;
-        }
-        
-        .cursor-animate:hover::after {
-          transform: scale(1);
-        }
-    </style>
-    
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Tailwind Config (formerly tailwind.config.js) -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Proxima Nova', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-            },
-            colors: {
-              'vivid-orange': 'rgb(var(--color-vivid-orange) / <alpha-value>)',
-              'charcoal-black': 'rgb(var(--color-charcoal-black) / <alpha-value>)',
-              'cool-gray': 'rgb(var(--color-cool-gray) / <alpha-value>)',
-              'pure-white': 'rgb(var(--color-pure-white) / <alpha-value>)',
-              'charcoal-gray': 'rgb(var(--color-charcoal-gray) / <alpha-value>)',
-              'soft-pearl': 'rgb(var(--color-soft-pearl) / <alpha-value>)',
-              'deep-teal-blue': 'rgb(var(--color-deep-teal-blue) / <alpha-value>)',
-              'warm-apricot': 'rgb(var(--color-warm-apricot) / <alpha-value>)',
-            },
-            backgroundImage: {
-              'gradient-dark': 'none', // Remove the gradient
-              'bg-dark': 'rgb(var(--color-charcoal-black))'
-            },
-            cursor: {
-              'pointer-zoom': 'zoom-in',
-              'pointer-click': 'pointer',
-              'fancy': 'url(./cursor.png), auto',
-            },
-          }
+    .animate-fadeIn {
+      animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    /* Base styles */
+    body {
+      font-family: 'Proxima Nova', system-ui, sans-serif;
+      background: linear-gradient(to bottom right, rgb(var(--color-charcoal-black)), rgb(var(--color-cool-gray) / 0.9));
+      color: rgb(var(--color-pure-white));
+      min-height: 100vh;
+    }
+
+    .cursor-animate {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cursor-animate::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(var(--color-vivid-orange), 0.3);
+      transform: scale(0);
+      transition: transform 0.3s;
+      pointer-events: none;
+    }
+
+    .cursor-animate:hover::after {
+      transform: scale(1);
+    }
+  </style>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config (formerly tailwind.config.js) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Proxima Nova', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+          colors: {
+            'vivid-orange': 'rgb(var(--color-vivid-orange) / <alpha-value>)',
+            'charcoal-black': 'rgb(var(--color-charcoal-black) / <alpha-value>)',
+            'cool-gray': 'rgb(var(--color-cool-gray) / <alpha-value>)',
+            'pure-white': 'rgb(var(--color-pure-white) / <alpha-value>)',
+            'charcoal-gray': 'rgb(var(--color-charcoal-gray) / <alpha-value>)',
+            'soft-pearl': 'rgb(var(--color-soft-pearl) / <alpha-value>)',
+            'deep-teal-blue': 'rgb(var(--color-deep-teal-blue) / <alpha-value>)',
+            'warm-apricot': 'rgb(var(--color-warm-apricot) / <alpha-value>)',
+          },
+          backgroundImage: {
+            'gradient-dark': 'none', // Remove the gradient
+            'bg-dark': 'rgb(var(--color-charcoal-black))'
+          },
+          cursor: {
+            'pointer-zoom': 'zoom-in',
+            'pointer-click': 'pointer',
+            'fancy': 'url(./cursor.png), auto',
+          },
         }
       }
-    </script>
-    <script>
-      // Image caching function
-      document.addEventListener('DOMContentLoaded', function() {
-        const images = document.querySelectorAll('img');
-        
-        // Check cache first
-        images.forEach(img => {
-          const cachedImage = localStorage.getItem(img.src);
-          if (cachedImage) {
-            img.src = cachedImage;
-          } else {
-            // Cache the image after loading
-            img.addEventListener('load', function() {
-              cacheImage(img.src);
-            });
-          }
-        });
-        
-        // Function to cache an image
-        function cacheImage(src) {
-          fetch(src)
-            .then(response => response.blob())
-            .then(blob => {
-              return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onloadend = () => resolve(reader.result);
-                reader.onerror = reject;
-                reader.readAsDataURL(blob);
-              });
-            })
-            .then(base64data => {
-              try {
-                localStorage.setItem(src, base64data);
-              } catch (e) {
-                console.log('Storage failed: ' + e);
-              }
-            })
-            .catch(err => console.error('Error caching image:', err));
+    }
+  </script>
+  <script>
+    // Image caching function
+    document.addEventListener('DOMContentLoaded', function () {
+      const images = document.querySelectorAll('img');
+
+      // Check cache first
+      images.forEach(img => {
+        const cachedImage = localStorage.getItem(img.src);
+        if (cachedImage) {
+          img.src = cachedImage;
+        } else {
+          // Cache the image after loading
+          img.addEventListener('load', function () {
+            cacheImage(img.src);
+          });
         }
       });
-    </script>
 
-  </head>
-    <body class="bg-cool-gray min-h-screen font-sans">
-    <nav class="fixed top-6 left-1/2 z-50 -translate-x-1/2 w-[90vw] max-w-4xl rounded-2xl bg-charcoal-black/80 backdrop-blur-lg shadow-xl border border-charcoal-gray px-8 py-3">
-      <div class="flex items-center w-full">
-        <div class="flex-shrink-0 h-12">
-          <img
-            src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dqtGjX5NzoGYCZ7VugMOmecaPRsdXJ6Q8wxhW"
-            alt="FixTruck Logo"
-            class="h-full w-auto"
-            draggable="false"
-          />
-        </div>
-        <button id="menu-btn" class="ml-auto md:hidden text-vivid-orange focus:outline-none" aria-label="Open menu">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
-          </svg>
-        </button>
-        <ul id="menu" class="hidden absolute top-full left-0 w-full bg-charcoal-black/95 rounded-b-2xl border-x border-b border-charcoal-gray shadow-xl flex-col items-center gap-4 py-6 md:static md:flex md:flex-row md:gap-6 md:bg-transparent md:shadow-none md:border-none md:py-0 md:w-[70%] md:ml-auto md:relative transition-all duration-300">
-          <li><a href="#home" class="hover:text-vivid-orange transition-colors text-lg">Home</a></li>
-          <li><a href="#services" class="hover:text-vivid-orange transition-colors text-lg">Services</a></li>
-          <li><a href="#location" class="hover:text-vivid-orange transition-colors text-lg">Location</a></li>
-          <li><a href="#info" class="hover:text-vivid-orange transition-colors text-lg">Info</a></li>
-          <li><a href="#contact" class="hover:text-vivid-orange transition-colors text-lg">Contact</a></li>
-          <li><a href="careers.html" class="hover:text-vivid-orange transition-colors text-lg">Careers</a></li>
-        </ul>
+      // Function to cache an image
+      function cacheImage(src) {
+        fetch(src)
+          .then(response => response.blob())
+          .then(blob => {
+            return new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onloadend = () => resolve(reader.result);
+              reader.onerror = reject;
+              reader.readAsDataURL(blob);
+            });
+          })
+          .then(base64data => {
+            try {
+              localStorage.setItem(src, base64data);
+            } catch (e) {
+              console.log('Storage failed: ' + e);
+            }
+          })
+          .catch(err => console.error('Error caching image:', err));
+      }
+    });
+  </script>
+
+</head>
+
+<body class="bg-cool-gray min-h-screen font-sans">
+  <nav
+    class="fixed top-6 left-1/2 z-50 -translate-x-1/2 w-[90vw] max-w-4xl rounded-2xl bg-charcoal-black/80 backdrop-blur-lg shadow-xl border border-charcoal-gray px-8 py-3">
+    <div class="flex items-center w-full">
+      <div class="flex-shrink-0 h-12">
+        <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dqtGjX5NzoGYCZ7VugMOmecaPRsdXJ6Q8wxhW" alt="FixTruck Logo"
+          class="h-full w-auto" draggable="false" />
       </div>
-      <script>
-        const btn = document.getElementById("menu-btn");
-        const menu = document.getElementById("menu");
-        btn.addEventListener("click", () => menu.classList.toggle("hidden"));
-        menu.querySelectorAll("a").forEach(link => {
-          link.addEventListener("click", () => {
-            if (window.innerWidth < 768) menu.classList.add("hidden");
-          });
-        });
-      </script>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="pt-28 pb-16 flex flex-col items-center justify-center text-center">
-      <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dyoHGP1LaRkIeQ2K1FfOoY9uVDXlbTtjZcz5P" alt="Truck Hangar" class="rounded-xl shadow-lg mb-6 max-w-3xl w-full h-72 object-cover object-center" />
-      <h1 class="mb-3">
-      <img 
-        src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dqtGjX5NzoGYCZ7VugMOmecaPRsdXJ6Q8wxhW" 
-        alt="Fix Truck" 
-        class="h-16 w-auto"
-        />
-      </h1>
-
-      <p class="text-xl text-pure-white max-w-xl mx-auto mb-6">Truck and trailer service in Germany</p>
-      <a href="#contact" class="cursor-pointer-zoom inline-block bg-vivid-orange hover:bg-warm-apricot text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-all duration-300">
-        Book Now
-      </a>
-    </section>
-    
-        <!-- Services Section -->
-    <section id="services" class="max-w-7xl mx-auto mb-16 px-4">
-      <h2 class="text-3xl font-bold text-vivid-orange mb-4">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30">
-          <div class="h-48 w-full">
-            <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7d7DjZlSeC8bFH2iGWrM7RkJTd5qYsweU0aQXj" alt="Diagnostics" class="w-full h-full object-cover" />
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-vivid-orange mb-2">Diagnostics</h3>
-            <p class="text-soft-pearl text-sm">Computer &amp; mechanical checks.</p>
-          </div>
-        </div>
-        <div class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30">
-          <div class="h-48 w-full">
-            <img src="https://fix-truck.com/files/outside" alt="Repairs" class="w-full h-full object-cover object-bottom" />
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-vivid-orange mb-2">Repairs</h3>
-            <p class="text-soft-pearl text-sm">Mechanical, body, electrical, tires.</p>
-          </div>
-        </div>
-        <div class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30">
-          <div class="h-48 w-full">
-            <img src="https://fix-truck.com/files/real-cars" alt="24/7 Roadside assistance" class="w-full h-full object-cover object-top" />
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-vivid-orange mb-2">24/7 Roadside assistance</h3>
-            <p class="text-soft-pearl text-sm">Emergency mobile teams.</p>
-          </div>
-        </div>
-      </div>
-      <div class="mt-10 flex flex-col md:flex-row items-stretch gap-6 justify-center">
-        <div class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30 w-full md:w-1/2 flex flex-col">
-          <div class="h-32 w-full">
-            <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dWUVOwLcQGlIxJgqubrZhvatPMfRXB3YHS65c" alt="Fleet Support" class="w-full h-full object-cover" />
-          </div>
-          <div class="p-5 flex-grow">
-            <h3 class="text-xl font-semibold text-vivid-orange mb-2">Fleet Support</h3>
-            <p class="text-soft-pearl text-sm">For logistics companies &amp; international carriers.</p>
-          </div>
-        </div>
-        <div class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30 w-full md:w-1/2 flex flex-col">
-          <div class="h-32 w-full">
-            <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dPSBvLk3kES64JsNeMdGWKXVnCxL0y5htPHfI" alt="Compliance" class="w-full h-full object-cover" />
-          </div>
-          <div class="p-5 flex-grow">
-            <h3 class="text-xl font-semibold text-vivid-orange mb-2">Compliance Help</h3>
-            <p class="text-soft-pearl text-sm">Insurance, police, and regulatory assistance.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Location/Map Section -->
-    <section id="location" class="max-w-3xl mx-auto mb-12 px-4">
-      <h2 class="text-3xl font-bold text-vivid-orange mb-4 flex items-center gap-2">
-        <svg class="w-7 h-7 text-vivid-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      <button id="menu-btn" class="ml-auto md:hidden text-vivid-orange focus:outline-none" aria-label="Open menu">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
         </svg>
-        Our Location
-      </h2>
-      <div class="rounded-lg overflow-hidden shadow-lg border border-charcoal-gray mb-3">
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=8.02%2C53.13%2C8.12%2C53.23&amp;layer=mapnik&amp;marker=53.182706,8.074664" class="w-full h-64" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-2">
-        <span class="font-semibold text-cool-gray">Copy coordinates:</span>
-        <input type="text" readonly value="53.182706, 8.074664" class="bg-charcoal-gray text-pure-white px-3 py-2 rounded border border-charcoal-gray w-full sm:w-auto cursor-pointer select-all" onclick="this.select();" />
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="font-semibold text-cool-gray">Address:</span>
-        <span class="text-pure-white">Bertha-Benz-Straße 3, Bad Zwischenahn, Germany</span>
-      </div>
-    </section>
+      </button>
+      <ul id="menu"
+        class="hidden absolute top-full left-0 w-full bg-charcoal-black/95 rounded-b-2xl border-x border-b border-charcoal-gray shadow-xl flex-col items-center gap-4 py-6 md:static md:flex md:flex-row md:gap-6 md:bg-transparent md:shadow-none md:border-none md:py-0 md:w-[70%] md:ml-auto md:relative transition-all duration-300">
+        <li><a href="#home" class="hover:text-vivid-orange transition-colors text-lg">Home</a></li>
+        <li><a href="#services" class="hover:text-vivid-orange transition-colors text-lg">Services</a></li>
+        <li><a href="#location" class="hover:text-vivid-orange transition-colors text-lg">Location</a></li>
+        <li><a href="#info" class="hover:text-vivid-orange transition-colors text-lg">Info</a></li>
+        <li><a href="#contact" class="hover:text-vivid-orange transition-colors text-lg">Contact</a></li>
+        <li><a href="careers.html" class="hover:text-vivid-orange transition-colors text-lg">Careers</a></li>
+      </ul>
+    </div>
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+      menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768) menu.classList.add("hidden");
+        });
+      });
+    </script>
+  </nav>
 
-    <!-- Info Section -->
-    <section id="info" class="max-w-3xl mx-auto mb-16 px-4">
-      <h2 class="text-3xl font-bold text-vivid-orange mb-4">Business Info</h2>
-      <div class="bg-charcoal-gray rounded-xl p-6 border border-charcoal-gray flex flex-col md:flex-row items-center gap-6 shadow-xl">
-        <div class="rounded-3xl shadow-lg w-44 h-44 overflow-hidden bg-charcoal-gray">
-          <img 
-            src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" 
-            alt="Workshop" 
-            class="w-full h-full object-cover transform scale-115"
-            style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
-          />
-        </div>
-        <ul class="space-y-2 text-lg">
-          <li><span class="font-semibold text-vivid-orange">Address:</span> Oldenburg, Germany</li>
-          <li><span class="font-semibold text-vivid-orange">Phone:</span> 004917630560983 </li>
-          <li><span class="font-semibold text-vivid-orange">Email:</span> info@fix-truck.com</li>
-          <li><span class="font-semibold text-vivid-orange">Open:</span> Mon - Fri 7:30 - 19:30 Sat. 07:30 - 15</li>
-          <li><span class="font-semibold text-vivid-orange">For:</span> EU trucks and Trailers</li>
-        </ul>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="pt-28 pb-16 flex flex-col items-center justify-center text-center">
+    <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dyoHGP1LaRkIeQ2K1FfOoY9uVDXlbTtjZcz5P" alt="Truck Hangar"
+      class="rounded-xl shadow-lg mb-6 max-w-3xl w-full h-72 object-cover object-center" />
+    <h1 class="mb-3">
+      <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dqtGjX5NzoGYCZ7VugMOmecaPRsdXJ6Q8wxhW" alt="Fix Truck"
+        class="h-16 w-auto" />
+    </h1>
 
-    <!-- Contact / CTA Section -->
-    <section id="contact" class="max-w-4xl mx-auto mb-20 px-4 text-center">
-      <h2 class="text-3xl font-bold text-vivid-orange mb-4">Contact & Booking</h2>
-      <p class="text-lg text-pure-white mb-6">Your truck is in trouble? We're here 24/7 in Oldenburg, Germany.</p>
-      
-      <div class="bg-charcoal-black/80 rounded-xl p-8 shadow-lg">
-        <a href="mailto:info@fix-truck.com" class="inline-block bg-vivid-orange hover:bg-warm-apricot text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300 mb-6 transform hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto">Request Service</a>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <a href="tel:004917630560983" class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200">
-            <div class="text-vivid-orange font-semibold flex items-center justify-center gap-2 mb-1">
-              <span>Phone</span>
-            </div>
-            <div class="text-pure-white">004917630560983</div>
-          </a>
-          <a href="mailto:info@fix-truck.com" class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200">
-            <div class="text-vivid-orange font-semibold flex items-center justify-center gap-2 mb-1">
-              <span>Email</span>
-            </div>
-            <div class="text-pure-white">info@fix-truck.com</div>
-          </a>
+    <p class="text-xl text-pure-white max-w-xl mx-auto mb-6">Truck and trailer service in Germany</p>
+    <a href="#contact"
+      class="cursor-pointer-zoom inline-block bg-vivid-orange hover:bg-warm-apricot text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-all duration-300">
+      Book Now
+    </a>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="max-w-7xl mx-auto mb-16 px-4">
+    <h2 class="text-3xl font-bold text-vivid-orange mb-4">Our Services</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div
+        class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30">
+        <div class="h-48 w-full">
+          <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7d7DjZlSeC8bFH2iGWrM7RkJTd5qYsweU0aQXj" alt="Diagnostics"
+            class="w-full h-full object-cover" />
         </div>
-        
-        <div class="mt-8">
-          <a href="https://www.facebook.com/profile.php?id=61575897424757" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-cool-gray hover:bg-cool-gray/80 text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 active:scale-95 w-full sm:w-auto">
-            <span>Follow us on Facebook</span>
-          </a>
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-vivid-orange mb-2">Diagnostics</h3>
+          <p class="text-soft-pearl text-sm">Computer &amp; mechanical checks.</p>
         </div>
       </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="text-center py-6 text-pure-white text-sm border-t border-charcoal-gray">
-      &copy; 2025 FixTruck. All rights reserved.
-    </footer>
-  </body>
+      <div
+        class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30">
+        <div class="h-48 w-full">
+          <img src="https://fix-truck.com/files/outside" alt="Repairs"
+            class="w-full h-full object-cover object-bottom" />
+        </div>
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-vivid-orange mb-2">Repairs</h3>
+          <p class="text-soft-pearl text-sm">Mechanical, body, electrical, tires.</p>
+        </div>
+      </div>
+      <div
+        class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30">
+        <div class="h-48 w-full">
+          <img src="https://fix-truck.com/files/real-cars" alt="24/7 Roadside assistance"
+            class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-vivid-orange mb-2">24/7 Roadside assistance</h3>
+          <p class="text-soft-pearl text-sm">Emergency mobile teams.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-col md:flex-row items-stretch gap-6 justify-center">
+      <div
+        class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30 w-full md:w-1/2 flex flex-col">
+        <div class="h-32 w-full">
+          <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dWUVOwLcQGlIxJgqubrZhvatPMfRXB3YHS65c" alt="Fleet Support"
+            class="w-full h-full object-cover" />
+        </div>
+        <div class="p-5 flex-grow">
+          <h3 class="text-xl font-semibold text-vivid-orange mb-2">Fleet Support</h3>
+          <p class="text-soft-pearl text-sm">For logistics companies &amp; international carriers.</p>
+        </div>
+      </div>
+      <div
+        class="bg-charcoal-gray rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-vivid-orange/30 w-full md:w-1/2 flex flex-col">
+        <div class="h-32 w-full">
+          <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dPSBvLk3kES64JsNeMdGWKXVnCxL0y5htPHfI" alt="Compliance"
+            class="w-full h-full object-cover" />
+        </div>
+        <div class="p-5 flex-grow">
+          <h3 class="text-xl font-semibold text-vivid-orange mb-2">Compliance Help</h3>
+          <p class="text-soft-pearl text-sm">Insurance, police, and regulatory assistance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location/Map Section -->
+  <section id="location" class="max-w-3xl mx-auto mb-12 px-4">
+    <h2 class="text-3xl font-bold text-vivid-orange mb-4 flex items-center gap-2">
+      <svg class="w-7 h-7 text-vivid-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+      Our Location
+    </h2>
+    <div class="rounded-lg overflow-hidden shadow-lg border border-charcoal-gray mb-3">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=8.02%2C53.13%2C8.12%2C53.23&amp;layer=mapnik&amp;marker=53.182706,8.074664"
+        class="w-full h-64" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-2">
+      <span class="font-semibold text-cool-gray">Copy coordinates:</span>
+      <input type="text" readonly value="53.182706, 8.074664"
+        class="bg-charcoal-gray text-pure-white px-3 py-2 rounded border border-charcoal-gray w-full sm:w-auto cursor-pointer select-all"
+        onclick="this.select();" />
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="font-semibold text-cool-gray">Address:</span>
+      <span class="text-pure-white">Bertha-Benz-Straße 3, Bad Zwischenahn, Germany</span>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section id="info" class="max-w-3xl mx-auto mb-16 px-4">
+    <h2 class="text-3xl font-bold text-vivid-orange mb-4">Business Info</h2>
+    <div
+      class="bg-charcoal-gray rounded-xl p-6 border border-charcoal-gray flex flex-col md:flex-row items-center gap-6 shadow-xl">
+      <div class="rounded-3xl shadow-lg w-44 h-44 overflow-hidden bg-charcoal-gray">
+        <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" alt="Workshop"
+          class="w-full h-full object-cover transform scale-115"
+          style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;" />
+      </div>
+      <ul class="space-y-2 text-lg">
+        <li><span class="font-semibold text-vivid-orange">Address:</span> Oldenburg, Germany</li>
+        <li><span class="font-semibold text-vivid-orange">Phone:</span> 004917630560983 </li>
+        <li><span class="font-semibold text-vivid-orange">Email:</span> info@fix-truck.com</li>
+        <li><span class="font-semibold text-vivid-orange">Open:</span> Mon - Fri 7:30 - 19:30 Sat. 07:30 - 15</li>
+        <li><span class="font-semibold text-vivid-orange">For:</span> EU trucks and Trailers</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact / CTA Section -->
+  <section id="contact" class="max-w-4xl mx-auto mb-20 px-4 text-center">
+    <h2 class="text-3xl font-bold text-vivid-orange mb-4">Contact & Booking</h2>
+    <p class="text-lg text-pure-white mb-6">Your truck is in trouble? We're here 24/7 in Oldenburg, Germany.</p>
+
+    <div class="bg-charcoal-black/80 rounded-xl p-8 shadow-lg">
+      <a href="mailto:info@fix-truck.com"
+        class="inline-block bg-vivid-orange hover:bg-warm-apricot text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300 mb-6 transform hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto">Request
+        Service</a>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+        <a href="tel:004917630560983"
+          class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200">
+          <div class="text-vivid-orange font-semibold flex items-center justify-center gap-2 mb-1">
+            <span>Phone</span>
+          </div>
+          <div class="text-pure-white">004917630560983</div>
+        </a>
+        <a href="mailto:info@fix-truck.com"
+          class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200">
+          <div class="text-vivid-orange font-semibold flex items-center justify-center gap-2 mb-1">
+            <span>Email</span>
+          </div>
+          <div class="text-pure-white">info@fix-truck.com</div>
+        </a>
+      </div>
+
+      <div class="mt-8">
+        <a href="https://www.facebook.com/profile.php?id=61575897424757" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 bg-cool-gray hover:bg-cool-gray/80 text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 active:scale-95 w-full sm:w-auto">
+          <span>Follow us on Facebook</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-pure-white text-sm border-t border-charcoal-gray">
+    &copy; 2025 FixTruck. All rights reserved.
+  </footer>
+</body>
+
 </html>
-
