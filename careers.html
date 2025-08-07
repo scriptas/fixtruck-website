@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Careers - FixTruck</title>
+      <meta http-equiv="Cache-Control" content="max-age=300, private" />
+      <link rel="icon" type="image/png" href="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dwCp7MpjM3Cj0VGcqzYTw7vPKZpD9igsO1e6x" />
+    
+    <!-- Embedded CSS -->
+    <style>
+      :root {
+        /* Primary colors (70%) */
+        --color-vivid-orange: 254 87 41;
+        --color-charcoal-black: 39 36 37;
+        --color-cool-gray: 183 183 183;
+        --color-pure-white: 255 255 255;
+        /* Secondary colors (30%) */
+        --color-charcoal-gray: 96 96 96;
+        --color-soft-pearl: 232 229 230;
+        --color-deep-teal-blue: 23 69 94;
+        --color-warm-apricot: 255 199 125;
+      }
+
+      /* Proxima Nova Font Faces */
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('./fonts/ProximaNova-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('./fonts/Proxima Nova Bold.otf') format('opentype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      .animate-fadeIn { animation: fadeIn 1s cubic-bezier(0.4,0,0.2,1) both;}
+      
+      /* Base styles */
+      body {
+        font-family: 'Proxima Nova', system-ui, sans-serif;
+        background: linear-gradient(to bottom right, rgb(var(--color-charcoal-black)), rgb(var(--color-cool-gray) / 0.9));
+        color: rgb(var(--color-pure-white));
+        min-height: 100vh;
+      }
+      
+      .language-toggle {
+        position: fixed;
+        top: 6rem;
+        right: 2rem;
+        z-index: 40;
+        background: rgba(var(--color-charcoal-black), 0.8);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgb(var(--color-charcoal-gray));
+        border-radius: 0.75rem;
+        padding: 0.5rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      
+      .language-toggle button {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s;
+        font-weight: 600;
+      }
+      
+      .language-toggle button.active {
+        background: rgb(var(--color-vivid-orange));
+        color: rgb(var(--color-pure-white));
+      }
+      
+      .language-toggle button:not(.active) {
+        color: rgb(var(--color-cool-gray));
+      }
+      
+      .language-toggle button:not(.active):hover {
+        background: rgba(var(--color-charcoal-gray), 0.5);
+        color: rgb(var(--color-pure-white));
+      }
+    </style>
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Proxima Nova', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            },
+            colors: {
+              'vivid-orange': 'rgb(var(--color-vivid-orange) / <alpha-value>)',
+              'charcoal-black': 'rgb(var(--color-charcoal-black) / <alpha-value>)',
+              'cool-gray': 'rgb(var(--color-cool-gray) / <alpha-value>)',
+              'pure-white': 'rgb(var(--color-pure-white) / <alpha-value>)',
+              'charcoal-gray': 'rgb(var(--color-charcoal-gray) / <alpha-value>)',
+              'soft-pearl': 'rgb(var(--color-soft-pearl) / <alpha-value>)',
+              'deep-teal-blue': 'rgb(var(--color-deep-teal-blue) / <alpha-value>)',
+              'warm-apricot': 'rgb(var(--color-warm-apricot) / <alpha-value>)',
+            },
+          }
+        }
+      }
+    </script>
+  </head>
+  
+  <body class="bg-cool-gray min-h-screen font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-1/2 z-50 -translate-x-1/2 w-[90vw] max-w-4xl rounded-2xl bg-charcoal-black/80 backdrop-blur-lg shadow-xl border border-charcoal-gray px-8 py-3">
+      <div class="flex items-center w-full">
+        <div class="flex-shrink-0 h-12">
+          <a href="index.html">
+            <img
+              src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dqtGjX5NzoGYCZ7VugMOmecaPRsdXJ6Q8wxhW"
+              alt="FixTruck Logo"
+              class="h-full w-auto hover:opacity-80 transition-opacity"
+              draggable="false"
+            />
+          </a>
+        </div>
+        <button id="menu-btn" class="ml-auto md:hidden text-vivid-orange focus:outline-none" aria-label="Open menu">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+        <ul id="menu" class="hidden absolute top-full left-0 w-full bg-charcoal-black/95 rounded-b-2xl border-x border-b border-charcoal-gray shadow-xl flex-col items-center gap-4 py-6 md:static md:flex md:flex-row md:gap-6 md:bg-transparent md:shadow-none md:border-none md:py-0 md:w-[70%] md:ml-auto md:relative transition-all duration-300">
+          <li><a href="index.html" class="hover:text-vivid-orange transition-colors text-lg">Home</a></li>
+          <li><a href="index.html#services" class="hover:text-vivid-orange transition-colors text-lg">Services</a></li>
+          <li><a href="index.html#location" class="hover:text-vivid-orange transition-colors text-lg">Location</a></li>
+          <li><a href="index.html#info" class="hover:text-vivid-orange transition-colors text-lg">Info</a></li>
+          <li><a href="index.html#contact" class="hover:text-vivid-orange transition-colors text-lg">Contact</a></li>
+          <li><a href="careers.html" class="text-vivid-orange font-semibold text-lg">Careers</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+      <button id="lang-lt" class="active" onclick="switchLanguage('lt')">LT</button>
+      <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 flex flex-col items-center justify-center text-center">
+      <div class="mb-6">
+        <img src="https://4noempxk43.ufs.sh/f/NJfeIjxpbO7dqtGjX5NzoGYCZ7VugMOmecaPRsdXJ6Q8wxhW" alt="FixTruck Logo" class="h-16 w-auto mx-auto mb-4" />
+        <h1 class="text-4xl font-bold text-vivid-orange mb-2" data-lt="Karjera" data-en="Careers">Karjera</h1>
+        <p class="text-xl text-pure-white max-w-xl mx-auto" data-lt="Prisijunk prie mūsų komandos" data-en="Join Our Team">Prisijunk prie mūsų komandos</p>
+      </div>
+    </section>
+
+    <!-- Job Listing Section -->
+    <section class="max-w-4xl mx-auto mb-16 px-4">
+      <div class="bg-charcoal-gray rounded-xl p-8 shadow-xl border border-charcoal-gray">
+        <!-- Job Title -->
+        <div class="mb-6">
+          <h2 class="text-2xl font-bold text-vivid-orange mb-2" data-lt="Automechanikas / Autošaltkalvis / Autoelektrikas" data-en="Auto Mechanic / Auto Electrician / Heavy Vehicle Technician">Automechanikas / Autošaltkalvis / Autoelektrikas</h2>
+          <p class="text-soft-pearl text-lg" data-lt="Ieškome patyrusių Sunkiasvorių Transporto Priemonių Mechanikų prisijungti prie mūsų augančios komandos. Užtikriname pilną kelionių organizavimą nuo jūsų namų iki darbo vietos ir atgal kiekvienai rotacijai." data-en="We are looking for experienced Heavy Vehicle Mechanics to join our growing team. We ensure complete travel organization from your home to the workplace and back for each rotation.">Ieškome patyrusių Sunkiasvorių Transporto Priemonių Mechanikų prisijungti prie mūsų augančios komandos. Užtikriname pilną kelionių organizavimą nuo jūsų namų iki darbo vietos ir atgal kiekvienai rotacijai.</p>
+        </div>
+
+        <!-- What We Offer -->
+        <div class="mb-8">
+          <h3 class="text-xl font-semibold text-vivid-orange mb-4" data-lt="Ką siūlome:" data-en="What We Offer:">Ką siūlome:</h3>
+          
+          <!-- Salary -->
+          <div class="bg-charcoal-black/50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-semibold text-warm-apricot mb-2" data-lt="Patrauklų atlyginimą, kuris prasideda nuo:" data-en="Attractive salary starting from:">Patrauklų atlyginimą, kuris prasideda nuo:</h4>
+            <p class="text-2xl font-bold text-vivid-orange">€2000 <span class="text-base font-normal text-soft-pearl" data-lt="į rankas" data-en="net">į rankas</span></p>
+          </div>
+
+          <!-- Work Schedule -->
+          <div class="bg-charcoal-black/50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-semibold text-warm-apricot mb-2" data-lt="Unikalų darbo grafiką:" data-en="Unique Work Schedule:">Unikalų darbo grafiką:</h4>
+            <p class="text-pure-white" data-lt="2 savaitės darbo, 2 savaitės poilsio" data-en="2 weeks work, 2 weeks rest">2 savaitės darbo, 2 savaitės poilsio</p>
+          </div>
+
+          <!-- Travel Coverage -->
+          <div class="bg-charcoal-black/50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-semibold text-warm-apricot mb-2" data-lt="Pilnas kelionės padengimas:" data-en="Full Travel Coverage:">Pilnas kelionės padengimas:</h4>
+            <ul class="text-pure-white space-y-1">
+              <li data-lt="• NEMOKAMI SKRYDŽIAI į darbą ir namo" data-en="• FREE FLIGHTS to work and home">• NEMOKAMI SKRYDŽIAI į darbą ir namo</li>
+              <li data-lt="• Visos kelionės išlaidos padengiamos darbovietės" data-en="• All travel expenses covered by employer">• Visos kelionės išlaidos padengiamos darbovietės</li>
+            </ul>
+          </div>
+
+          <!-- Accommodation -->
+          <div class="bg-charcoal-black/50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-semibold text-warm-apricot mb-2" data-lt="Aprūpinimas ir įranga:" data-en="Accommodation & Equipment:">Aprūpinimas ir įranga:</h4>
+            <ul class="text-pure-white space-y-1">
+              <li data-lt="• Privatus apgyvendinimas" data-en="• Private accommodation">• Privatus apgyvendinimas</li>
+              <li data-lt="• Individualūs kambariai moderniame būste" data-en="• Individual rooms in modern housing">• Individualūs kambariai moderniame būste</li>
+              <li data-lt="• Pilnai apstatytas su visais patogumais" data-en="• Fully furnished with all amenities">• Pilnai apstatytas su visais patogumais</li>
+              <li data-lt="• WiFi ir komunalinės paslaugos įskaičiuotos" data-en="• WiFi and utilities included">• WiFi ir komunalinės paslaugos įskaičiuotos</li>
+            </ul>
+          </div>
+
+          <!-- Professional Equipment -->
+          <div class="bg-charcoal-black/50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-semibold text-warm-apricot mb-2" data-lt="Profesionali Įranga:" data-en="Professional Equipment:">Profesionali Įranga:</h4>
+            <ul class="text-pure-white space-y-1">
+              <li data-lt="• ASMENINIS įrankių komplektas (naujas, išskirtinai jums)" data-en="• PERSONAL tool kit (new, exclusively for you)">• ASMENINIS įrankių komplektas (naujas, išskirtinai jums)</li>
+              <li data-lt="• Aukštos kokybės darbo apranga suteikiama įmonės" data-en="• High-quality work clothing provided by company">• Aukštos kokybės darbo apranga suteikiama įmonės</li>
+              <li data-lt="• Visa reikalinga saugos įranga" data-en="• All necessary safety equipment">• Visa reikalinga saugos įranga</li>
+            </ul>
+          </div>
+
+          <!-- Career Benefits -->
+          <div class="bg-charcoal-black/50 rounded-lg p-4">
+            <h4 class="text-lg font-semibold text-warm-apricot mb-2" data-lt="Karjeros Privalumai:" data-en="Career Benefits:">Karjeros Privalumai:</h4>
+            <ul class="text-pure-white space-y-1">
+              <li data-lt="• Sveikatos draudimas" data-en="• Health insurance">• Sveikatos draudimas</li>
+              <li data-lt="• Profesinio tobulėjimo programos" data-en="• Professional development programs">• Profesinio tobulėjimo programos</li>
+              <li data-lt="• Karjeros augimo galimybės" data-en="• Career growth opportunities">• Karjeros augimo galimybės</li>
+              <li data-lt="• Reguliarūs mokymai ir sertifikavimo programos" data-en="• Regular training and certification programs">• Reguliarūs mokymai ir sertifikavimo programos</li>
+              <li data-lt="• Stabilus darbas patikimoje įmonėje" data-en="• Stable work in a reliable company">• Stabilus darbas patikimoje įmonėje</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Requirements -->
+        <div class="mb-8">
+          <h3 class="text-xl font-semibold text-vivid-orange mb-4" data-lt="Reikalavimai:" data-en="Requirements:">Reikalavimai:</h3>
+          <div class="bg-charcoal-black/50 rounded-lg p-4">
+            <ul class="text-pure-white space-y-2">
+              <li data-lt="• Techninis išsilavinimas arba atitinkama kvalifikacija" data-en="• Technical education or relevant qualification">• Techninis išsilavinimas arba atitinkama kvalifikacija</li>
+              <li data-lt="• Patirtis sunkvežimių/sunkiosios technikos priežiūroje" data-en="• Experience in truck/heavy machinery maintenance">• Patirtis sunkvežimių/sunkiosios technikos priežiūroje</li>
+              <li data-lt="• Hidraulikos/mechanikos išmanymas (privalumas)" data-en="• Hydraulics/mechanics knowledge (advantage)">• Hidraulikos/mechanikos išmanymas (privalumas)</li>
+              <li data-lt="• Elektros sistemų supratimas (privalumas)" data-en="• Understanding of electrical systems (advantage)">• Elektros sistemų supratimas (privalumas)</li>
+              <li data-lt="• Profesionalus požiūris ir gebėjimas dirbti komandoje" data-en="• Professional attitude and ability to work in a team">• Profesionalus požiūris ir gebėjimas dirbti komandoje</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Apply Button -->
+        <div class="text-center">
+          <a href="mailto:info@fix-truck.com?subject=Career Application - Auto Mechanic Position" class="inline-block bg-vivid-orange hover:bg-warm-apricot text-pure-white font-bold py-4 px-8 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 active:scale-95">
+            <span data-lt="Kreiptis dėl darbo" data-en="Apply Now">Kreiptis dėl darbo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="max-w-4xl mx-auto mb-20 px-4 text-center">
+      <h2 class="text-3xl font-bold text-vivid-orange mb-4" data-lt="Kontaktai" data-en="Contact">Kontaktai</h2>
+      <p class="text-lg text-pure-white mb-6" data-lt="Turite klausimų apie karjeros galimybes? Susisiekite su mumis!" data-en="Have questions about career opportunities? Contact us!">Turite klausimų apie karjeros galimybes? Susisiekite su mumis!</p>
+      
+      <div class="bg-charcoal-black/80 rounded-xl p-8 shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="tel:004917630560983" class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200">
+            <div class="text-vivid-orange font-semibold flex items-center justify-center gap-2 mb-1">
+              <span data-lt="Telefonas" data-en="Phone">Telefonas</span>
+            </div>
+            <div class="text-pure-white">004917630560983</div>
+          </a>
+          <a href="mailto:info@fix-truck.com" class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200">
+            <div class="text-vivid-orange font-semibold flex items-center justify-center gap-2 mb-1">
+              <span data-lt="El. paštas" data-en="Email">El. paštas</span>
+            </div>
+            <div class="text-pure-white">info@fix-truck.com</div>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="text-center py-6 text-pure-white text-sm border-t border-charcoal-gray">
+      &copy; 2025 FixTruck. All rights reserved.
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu functionality
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+      menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768) menu.classList.add("hidden");
+        });
+      });
+
+      // Language switching functionality
+      let currentLanguage = 'lt';
+
+      function switchLanguage(lang) {
+        currentLanguage = lang;
+        
+        // Update button states
+        document.getElementById('lang-lt').classList.toggle('active', lang === 'lt');
+        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+        
+        // Update all text elements
+        const elements = document.querySelectorAll('[data-lt][data-en]');
+        elements.forEach(element => {
+          const text = element.getAttribute(`data-${lang}`);
+          if (text) {
+            element.textContent = text;
+          }
+        });
+      }
+
+      // Initialize with Lithuanian
+      switchLanguage('lt');
+    </script>
+  </body>
+</html>
