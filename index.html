@@ -23,6 +23,15 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-17499236070');
+    
+    // Conversion tracking functions
+    function trackConversion(action) {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17499236070',
+        'event_category': 'engagement',
+        'event_label': action
+      });
+    }
   </script>
 
   <!-- Embedded CSS (formerly default.css) -->
@@ -230,7 +239,8 @@
 
     <p class="text-xl text-pure-white max-w-xl mx-auto mb-6">Truck and trailer service in Germany</p>
     <a href="#contact"
-      class="cursor-pointer-zoom inline-block bg-vivid-orange hover:bg-warm-apricot text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-all duration-300">
+      class="cursor-pointer-zoom inline-block bg-vivid-orange hover:bg-warm-apricot text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-all duration-300"
+      onclick="trackConversion('book_now_click')">
       Book Now
     </a>
   </section>
@@ -352,19 +362,22 @@
 
     <div class="bg-charcoal-black/80 rounded-xl p-8 shadow-lg">
       <a href="mailto:info@fix-truck.com"
-        class="inline-block bg-vivid-orange hover:bg-warm-apricot text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300 mb-6 transform hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto">Request
+        class="inline-block bg-vivid-orange hover:bg-warm-apricot text-pure-white font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300 mb-6 transform hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto"
+        onclick="trackConversion('request_service_email')">Request
         Service</a>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
         <a href="tel:004917630560983"
-          class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200">
+          class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200"
+          onclick="trackConversion('phone_call')">
           <div class="text-vivid-orange font-semibold flex items-center justify-center gap-2 mb-1">
             <span>Phone</span>
           </div>
           <div class="text-pure-white">004917630560983</div>
         </a>
         <a href="mailto:info@fix-truck.com"
-          class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200">
+          class="bg-charcoal-gray rounded-lg p-4 border border-charcoal-gray hover:bg-charcoal-gray/80 active:bg-charcoal-gray/60 transform hover:scale-105 active:scale-95 transition-all duration-200"
+          onclick="trackConversion('contact_email')">
           <div class="text-vivid-orange font-semibold flex items-center justify-center gap-2 mb-1">
             <span>Email</span>
           </div>
